@@ -1,0 +1,44 @@
+<h2>*ngFor Example</h2>
+<ul>
+    <!-- see using index -->
+    <li *ngFor="let book of books; let i = index">
+        {{i}} : {{book.title}} - {{book.rating}}
+    </li>
+</ul>
+
+<h2>Styling Examples</h2>
+<h3>Using [ngStyle]</h3>
+<!-- see nameing variables when css attribute has `-` in it -->
+<span [ngStyle]="{
+    color: colorName,
+    'font-weight': fontWeight,
+    borderBottom: borderStyle
+}">Styled with an object passed to  [ngStyle]. </span>
+
+<h3>Using Sytle Property Binding</h3>
+<span
+ [style.color]="colorName"
+ [style.font-weight]="fontWeight"
+ [style.border-bottom]="borderStyle"
+ >Styled with property binding</span>
+
+<!-- STYLING with class -->
+<!-- using css classes and set them true (applicable) or false (not applicable) -->
+<h3>Styling with [ngClass]</h3>
+<span [ngClass]="{
+    blueColored:isBlue,
+    capitalized:isCapitalized
+}">Styled with passing object to [ngClass]</span>
+<br>
+<span [ngClass]="['blueColored', 'capitalized']">Styled with array of strings passed to [ngClass]</span>"
+<br>
+<!-- sets ngClass to class variable 'letItBlue' -->
+<!-- class variable 'letItBlue' has the value 'blueColored' -->
+<!-- blueColored is a CSS class name -->
+<span [ngClass]="letItBlue">Used [ngClass] property styling</span>
+
+<h3>Styling with class property binding</h3>
+<span
+    [class.blueColored]="isBlue"
+    [class.capitalized]="isCapitalized"
+>Styled with class property binding</span>
